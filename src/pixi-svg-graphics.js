@@ -430,12 +430,6 @@
 
 				var pixi_text = new PIXI.Text(text, textStyle);
 
-				// var pixi_text = new PIXI.Text(text, {
-				// 	fontFamily: fontFamily,
-				// 	fontSize: fontSize,
-				// 	fill: fill
-				// })
-
 				if (tspan) {
 					var x = tspan.getAttribute('x') || node.getAttribute('x') || 0
 					var y = tspan.getAttribute('y') || node.getAttribute('y') || 0
@@ -445,7 +439,7 @@
 				}
 
 				pixi_text.x = parseInt(x);
-				pixi_text.y = parseInt(y); // - pixi_text.height; //+ PIXI.TextMetrics._fonts[pixi_text._font].descent;
+				pixi_text.y = parseInt(y) - pixi_text.height + PIXI.TextMetrics._fonts[pixi_text._font].descent;
 				(parent || this).addChild(pixi_text);
 			}
 
