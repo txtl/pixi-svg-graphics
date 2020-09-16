@@ -77,4 +77,6 @@ through browserstack. Afterwards it will run an image comparison tool.
 Todos:
 ------
 
-* Add font formating support
+* Add font formating support\
+
+Note: this patch is not working appropriately with webgl. Use v5 legacy and set forceCanvas: true. 
